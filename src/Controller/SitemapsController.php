@@ -87,7 +87,7 @@ class SitemapsController extends AppController
 
                 if ($c['alternateLanguage'])
                     foreach ($c['alternateLanguage'] as $lang => $lang_name)
-                        $page['xhtml:link'][] = ['lang' => substr(0, 2, $lang), 'url' => $entity->get('urls')[$lang]];
+                        $page['xhtml:link'][] = ['lang' => substr($lang,0, 2), 'url' => $entity->get('urls')[$lang]];
                 $pages[] = $page;
             endforeach;
 
