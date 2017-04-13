@@ -15,6 +15,11 @@
                 <?php if(!empty($page['changefreq'])): ?>
                     <changefreq><?= $page['changefreq']; ?></changefreq>
                 <?php endif; ?>
+                <?php if(!empty($page['xhtml:link'])):
+                    foreach ($page['xhtml:link'] as $xhtml_link): ?>
+                        <xhtml:link rel="alternate" hreflang="<?= $xhtml_link['lang'] ?>" href="<?= $xhtml_link['url'] ?>"/>
+                    <?php endforeach;
+                endif; ?>
             </url>
         <?php endif; ?>
     <?php endforeach; ?>
